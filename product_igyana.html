@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Ігуана</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function showPurchaseForm() {
+            document.getElementById("purchaseForm").style.display = "block";
+        }
+
+        function handlePurchase(event) {
+            event.preventDefault(); 
+            document.getElementById("purchaseForm").style.display = "none"; 
+            document.getElementById("thankYouMessage").style.display = "block"; 
+        }
+    </script>
+</head>
+<body>
+<header>
+    <h1>Ігуана</h1>
+    <nav>
+        <a href="home.html">Головна</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="product.html">Товар</a>
+        <a href="contacts.html">Контакти</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Ігуана</h2>
+    <img src="igyana.jpg" alt="Ігуана">
+    <p>Опис: Тропічна ящірка, потребує спеціального догляду.</p>
+    <p>Ціна: 5000 грн</p>
+    <button onclick="showPurchaseForm()">Купити</button>
+
+    <div id="purchaseForm" style="display:none; margin-top:20px;">
+        <h3>Форма покупки Ігуани</h3>
+        <form onsubmit="handlePurchase(event)">
+            <label for="name">Ім’я:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="address">Адреса доставки:</label><br>
+            <input type="text" id="address" name="address" required><br><br>
+
+            <button type="submit">Підтвердити покупку</button>
+        </form>
+    </div>
+
+    <div id="thankYouMessage" style="display:none; margin-top:20px;">
+        <h3>Дякуємо за покупку!</h3>
+        <p>Ми скоро зв'яжемося з вами.</p>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 Екзотичні Тварини</p>
+</footer>
+</body>
+</html>
